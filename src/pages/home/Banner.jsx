@@ -5,7 +5,7 @@ import celebrateImg from "../../assets/celebrate.jpg";
 function Banner() {
   return (
     <div>
-      <div className="hero bg-base-200  min-h-screen">
+      <div className="hero  ">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="flex-1 flex flex-col gap-12">
             <motion.img
@@ -33,15 +33,7 @@ function Banner() {
             />
           </div>
           <div className="flex-1">
-            <motion.h1
-              animate={{ x: "50px" }}
-              transition={{
-                duration: 2,
-                delay: 0.3,
-                ease: easeOut,
-              }}
-              className="text-5xl font-bold"
-            >
+            <h1 className="text-5xl font-bold">
               Latest{" "}
               <motion.span
                 animate={{
@@ -56,7 +48,7 @@ function Banner() {
                 Jobs
               </motion.span>{" "}
               For Your
-            </motion.h1>
+            </h1>
             <p className="py-6">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae

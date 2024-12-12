@@ -56,8 +56,9 @@ function Navbar() {
             </ul>
           </div>
           <Link to="/">
-            <figure>
-              <img src={logoImg} alt="" />
+            <figure className="items-center gap-2 flex">
+              <img className="w-12 h-12" src={logoImg} alt="" />
+              <span>Job Portal</span>
             </figure>
           </Link>
         </div>
