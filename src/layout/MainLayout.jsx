@@ -4,7 +4,7 @@ import Footer from "../pages/shared/Footer";
 
 function MainLayout() {
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div className=" font-montserrat">
       <header>
         <Navbar />
       </header>

@@ -3,7 +3,7 @@ import HotJobs from "./HotJobs";
 
 function Home() {
   return (
-    <div>
+    <div className="space-y-12">
       <section className="w-11/12 mx-auto">
         <Banner />
       </section>

@@ -1,7 +1,10 @@
 import { IoLocationOutline } from "react-icons/io5";
-
+import { motion } from "motion/react";
+import { animate } from "motion";
+import { Link } from "react-router-dom";
 function HotJobCard({ job }) {
   const {
+    _id,
     title,
     location,
     category,
@@ -12,7 +15,7 @@ function HotJobCard({ job }) {
     company_logo,
   } = job;
   return (
-    <div className="w-full max-w-sm bg-white shadow-lg rounded-lg p-6">
+    <div className="w-full max-w-sm bg-slate-50 flex flex-col gap-4 justify-between border  shadow-lg rounded-lg p-6 hover:bg-white duration-300 transition-all hover:border hover:border-slate-300">
       {/* Header Section */}
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
@@ -50,7 +53,7 @@ function HotJobCard({ job }) {
       </div>
 
       {/* Job Title & Time */}
-      <div className="mt-4">
+      <div>
         <h3 className="text-xl font-bold text-gray-800">{title}</h3>
         <p className="text-sm text-gray-500 flex items-center space-x-2 mt-1">
           <span className="inline-flex items-center">
@@ -75,23 +78,28 @@ function HotJobCard({ job }) {
       </div>
 
       {/* Description */}
-      <p className="mt-4 text-gray-600">{description}</p>
+      <p className=" text-gray-600">{description}</p>
 
       {/* Skills */}
-      <div className="flex items-center gap-2  mt-4 flex-wrap">
-        {requirements?.map((req) => (
-          <span className="bg-gray-100 text-gray-800 text-sm font-medium px-2.5 py-1 rounded text-center">
+      <div className="flex items-center gap-2   flex-wrap">
+        {requirements?.map((req, index) => (
+          <span
+            key={index}
+            className="bg-gray-100 text-gray-800 text-sm font-medium px-2.5 py-1 rounded text-center"
+          >
             {req}
           </span>
         ))}
       </div>
 
       {/* Footer */}
-      <div className="mt-6 flex items-center justify-between">
+      <div className="flex items-center justify-between">
         <span className="text-blue-600 font-semibold text-lg">$500</span>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-          Apply Now
-        </button>
+        <Link to={`job/${_id}`}>
+          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            Apply Now
+          </button>
+        </Link>
       </div>
     </div>
   );
