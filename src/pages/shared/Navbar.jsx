@@ -23,7 +23,7 @@ function Navbar() {
         </details>
       </li>
       <li>
-        <a>Item 3</a>
+        <Link to="/myApplications">My applications</Link>
       </li>
     </>
   );

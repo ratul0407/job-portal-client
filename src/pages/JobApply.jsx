@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import UseAuth from "../hooks/UseAuth";
+import Swal from "sweetalert2";
 
 function JobApply() {
   const { id } = useParams();
@@ -14,11 +15,27 @@ function JobApply() {
     console.log(github, linkedin, resume);
     const jobApplication = {
       job_id: id,
-      job_email: user.email,
+      applicant_email: user.email,
       linkedin,
       github,
       resume,
     };
+    fetch("http://localhost:5000/job-applications", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(jobApplication),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Job application successful",
+        });
+      });
   };
   return (
     <div>
